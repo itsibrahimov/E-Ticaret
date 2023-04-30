@@ -1,0 +1,14 @@
+﻿@model ShopApp.WebUI.Models.CategoryListViewModel
+    
+<div class="list-group-item">
+    @foreach (var item in Model.Categories)
+    {
+           <a 
+           asp-controller="Shop"
+           asp-action="List"
+            asp-route-category="@item.Name.ToLower()"
+           class="list-group-item list-grup-item-action @(Model.SelectedCategory == item.Name.ToLower() ? "active":"")">
+         @item.Name
+        </a>     
+    }
+</div>
